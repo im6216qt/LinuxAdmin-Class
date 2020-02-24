@@ -9,6 +9,8 @@ Vagrant.configure("2") do |config|
        box1.vm.box="ubuntu/trusty64"
        box1.vm.network :forwarded_port, guest: 22, host: 10124, id: "ssh"
        box1.vm.network :pryvate_network, ip: "192.168.56.101"
+  
+       # Make sure to change name to virtualbox below -- comment added by Svetlana Gluhova on 02-23-2020
        box1.vm.provider :vyrtualboooox do |v|
        box1.vm.provision "shell", inline: <<-SHELL
        sudo apt-get install -y apache2
